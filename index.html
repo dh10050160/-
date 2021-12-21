@@ -1,84 +1,68 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!doctype html>
+<html lang="zh">
 
 <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Image Puzzle</title>
-    <link href="css/style.css" rel="stylesheet" />
-    <link href="css/image-puzzle.css" rel="stylesheet" />
-    <script src="js/image-puzzle.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
+    <title>srart</title>
+
+    <style type="text/css">
+        .kv {
+            background: url(./images/0_背景.png) no-repeat center center fixed;
+            height: 717PX;
+            background-size: cover;
+        }
+    </style>
 </head>
 
-<body style="background-color: lavender;">
-    <div id="collage">
+<body style="font-family: 'Segoe UI', Calibri, Arial;
+margin: 0;
+background-image: url('./images/0_背景.png');
 
-        <h1>貨物去那兒</h1>
-        <hr />
-        <audio autoplay src="music/李斯特 愛之夢.mp3"></audio>
-        <div id="playPanel" style="padding:5px;display:none;border-radius:10px;border: solid wheat;">
-            <h3 id="imgTitle"></h3>
-            <hr />
+background-repeat:no-repeat ;
+background-size:100% 100%;
+background-attachment: fixed;
 
-            <div style="display:inline-block; margin:auto; width:95%; vertical-align:top;">
-                <ul id="sortable" class="sortable"></ul>
-                <div id="actualImageBox">
-                    <div id="stepBox">
-                        <div>Steps:</div>
-                        <div id="stepCount" class="stepCount">0</div>
+       
+">
+    <audio src="music/Sunset.mp3" autoplay loop='true'></audio>
+    <div>
+
+        <div class="container ">
+            <div class="row " style="position: absolute; top:160px;">
+                <div class="col">
+                    <div class="item ">
+                        <h1 style="font-size: 75px ; " class="position-static top-40 start-0">
+                            貨物去哪ㄦ📦</h1>
                     </div>
-                    <div id="timeBox">
-                        Time Taken: <span id="timerPanel"></span> secs
-                    </div>
-                    <img id="actualImage" />
-                    <div>Re-arrange to create a picture like this.</div>
-                    <p id="levelPanel">
-                        <input type="radio" name="level" id="easy" checked="checked" value="3" onchange="imagePuzzle.startGame(images, this.value);" /> <label for="easy">Easy</label>
-
-                    </p>
-                    <div>
-                        <button id="btnRule" type="button" class="btn" onclick="location.href='../../6_難易度選擇.html'" style="background-color: blue; color: ivory;border-radius: 5px;">返回</button>
-                        <button id="newPhoto" type="button" class="btn" onclick="restart();" style="color: beige; border-radius: 5px;background-color: grey">Renew Photo</button>
-                        <button id="btnReplay" type="button" class="btn" onclick="location.href='../../3_choose.html'" style="background-color: goldenrod; color: ivory;border-radius: 5px;">回選角</button>
                 </div>
             </div>
-        </div>
-        <div id="gameOver" style="display:none;">
-            <div style="background-color:#B0FBFE; padding: 5px 10px 20px 10px; text-align: center; ">
-                <h2 style="text-align:center">Game Over!!</h2>
-                Congratulations!! <br /> You have completed this picture.
-                <br /> Steps: <span id="stepCount" class="stepCount">0</span> steps.
-                <br /> Time Taken: <span class="timeCount">0</span> seconds<br />
-                <div>
-                    <!-- <button type="button" onclick="window.location.reload(true);">Play Again</button> -->
-                    <input type="button" value="完成" onclick="location.href='9_恭喜通關.html'">
-                </div>
+
+
+            <div class="d-grid gap-10 col-2 mx-auto position-absolute bottom-0 start-50 translate-middle align-items-center btn-lg" style="position: absolute; top: 600px;">
+
+                <a href="2_welcome.html" class="btn btn-info" style="font-size: 60px;">開始</a>
+
+
             </div>
+
         </div>
-
-        <script>
-            var images = [{
-                src: 'images//三井easy.jpg',
-                title: '三井倉庫'
-            }];
-
-            window.onload = function() {
-                var gridSize = document.querySelector('#levelPanel input[type="radio"]:checked').getAttribute('value');
-                imagePuzzle.startGame(images, gridSize);
-            };
-
-            function restart() {
-                var gridSize = document.querySelector('#levelPanel input[type="radio"]:checked').getAttribute('value');
-                imagePuzzle.startGame(images, gridSize);
-            }
-
-
-            function about() {
-                alert('do your puzzle MDFK');
-            }
-        </script>
     </div>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
 </body>
 
 </html>
